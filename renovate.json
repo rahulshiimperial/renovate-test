@@ -1,0 +1,24 @@
+{
+  "$schema": "https://renovatebot.com",
+  "extends": [
+    "config:recommended"
+  ],
+  "dependencyDashboard": true,
+  "poetry": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "description": "Group all minor and patch updates together to prevent PR noise",
+      "matchManagers": ["poetry"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "python-non-major-dependencies"
+    },
+    {
+      "description": "Isolate major updates because they might contain breaking changes",
+      "matchManagers": ["poetry"],
+      "matchUpdateTypes": ["major"],
+      "groupName": "python-major-dependencies"
+    }
+  ]
+}
