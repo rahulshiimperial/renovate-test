@@ -3,18 +3,10 @@ name = "python-renovate-test"
 version = "0.1.0"
 description = "A sample Python project to test Renovate automation"
 authors = ["Your Name <you@example.com>"]
-readme = "README.md"
-packages = [{include = "my_app"}]
+package-mode = false  # 👈 Add this line right here
 
 [tool.poetry.dependencies]
 python = "^3.11"
-# Hardcoding older versions so Renovate has updates to find
 requests = "2.28.0" 
 fastapi = "0.90.0"
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.0.0"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
